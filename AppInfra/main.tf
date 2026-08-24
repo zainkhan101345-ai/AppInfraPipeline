@@ -56,55 +56,55 @@ module "NodeEC2"{
 
 
 
-module "TargetGroup"{
-    source="./TargetGroup"
-    vpc_id=module.vpcsubnets.vpc_id
-    tg_name="TargetGroup"
-    tg_port=3000
-    tg_protocol="HTTP"
-    ec2_id=module.NodeEC2.NodeEc2_id
+# module "TargetGroup"{
+#     source="./TargetGroup"
+#     vpc_id=module.vpcsubnets.vpc_id
+#     tg_name="TargetGroup"
+#     tg_port=3000
+#     tg_protocol="HTTP"
+#     ec2_id=module.NodeEC2.NodeEc2_id
     
-}   
+# }   
 
 
-module "LoadBalancer"{
-    source="./LoadBalancer"
-    lb_name="Load-balancer-Main"
-    is_internal=false
-    lb_type="application"
-    security_groups=[module.SecurityGroups.ec2_sg_id]
-    subnet_ids=tolist(module.vpcsubnets.public_subnets)
-    lb_listener_port =80
-    lb_listener_protocol ="HTTP"
-    lb_listener_port_HTTPS=443
-    lb_listener_protocol_HTTPS="HTTPS"
-    acm_arn=module.ACM.ACM_arn
-    lb_listener_default_action_type="forward"
-    target_group_arn=module.TargetGroup.aws_lb_target_group_arn
+# module "LoadBalancer"{
+#     source="./LoadBalancer"
+#     lb_name="Load-balancer-Main"
+#     is_internal=false
+#     lb_type="application"
+#     security_groups=[module.SecurityGroups.ec2_sg_id]
+#     subnet_ids=tolist(module.vpcsubnets.public_subnets)
+#     lb_listener_port =80
+#     lb_listener_protocol ="HTTP"
+#     lb_listener_port_HTTPS=443
+#     lb_listener_protocol_HTTPS="HTTPS"
+#     acm_arn=module.ACM.ACM_arn
+#     lb_listener_default_action_type="forward"
+#     target_group_arn=module.TargetGroup.aws_lb_target_group_arn
 
-} 
+# } 
 
 
 
-module "HostedZone"{
-    source="./HostedZone"  
-} 
+# module "HostedZone"{
+#     source="./HostedZone"  
+# } 
    
-module "ACM"{
-    source="./CertManager"
-    domain_name="zaink.store"
-    hosted_zone_id = module.HostedZone.hosted_zone_id  
-} 
+# module "ACM"{
+#     source="./CertManager"
+#     domain_name="zaink.store"
+#     hosted_zone_id = module.HostedZone.hosted_zone_id  
+# } 
 
-module "record" {
-    source="./Route53_record"
+# module "record" {
+#     source="./Route53_record"
   
-    zone_id = module.HostedZone.hosted_zone_id
-    domain_name="zaink.store"
-    lb_dns_name=module.LoadBalancer.aws_lb_dns_name
-    lb_zone_id=module.LoadBalancer.aws_lb_zone_id
+#     zone_id = module.HostedZone.hosted_zone_id
+#     domain_name="zaink.store"
+#     lb_dns_name=module.LoadBalancer.aws_lb_dns_name
+#     lb_zone_id=module.LoadBalancer.aws_lb_zone_id
    
-} 
+# } 
 
 
 
