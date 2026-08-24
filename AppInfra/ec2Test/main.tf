@@ -2,7 +2,6 @@ variable aws_ami {}
 variable instance_type {}
 variable InstanceName {}
 variable enable_public_ip_address {}
-variable install {}
 variable public_keyM {}
 
 
@@ -68,8 +67,6 @@ resource "aws_instance" "NodeEc2" {
     Name = var.InstanceName
   }
 
-  user_data = var.install
-  user_data_replace_on_change = true
   key_name = "NewKey"
 
   
