@@ -1,10 +1,10 @@
 
-data "aws_secretsmanager_secret_version" "db" {
-  secret_id = "UsersAppSecrets"
-}
-locals {
-  db = jsondecode(data.aws_secretsmanager_secret_version.db.secret_string)
-}
+# data "aws_secretsmanager_secret_version" "db" {
+#   secret_id = "UsersAppSecrets"
+# }
+# locals {
+#   db = jsondecode(data.aws_secretsmanager_secret_version.db.secret_string)
+# }
 data "aws_ami" "ubuntu" {
   most_recent = true
 
