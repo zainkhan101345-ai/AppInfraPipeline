@@ -4,4 +4,5 @@ The infrastructure, deployed in AWS eu-west-1 (Ireland), includes a VPC with pub
 
 I configured an Application Load Balancer with a Target Group to route traffic to EC2 instances and Route 53 for DNS-based access to the application.
 
-
+Here is the image demonstrating the AWS infrastructure:
+<img width="1110" height="714" alt="image" src="https://github.com/user-attachments/assets/145fb53b-1b5a-4f52-b8b8-586beb0f1eb2" />
