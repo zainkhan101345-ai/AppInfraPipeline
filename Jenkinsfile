@@ -12,7 +12,7 @@ pipeline {
 
                 echo '================ Clone Repo ================'
 
-                dir('AWSInfra') {
+                dir('AppInfra') {
                     bat 'dir'
                 }
 
@@ -25,7 +25,7 @@ pipeline {
 
                 echo '================ Terraform Init ================'
 
-                dir('AWSInfra') {
+                dir('AppInfra') {
                     bat 'dir'
                     bat 'terraform init'
                 }
@@ -39,7 +39,7 @@ pipeline {
                   if (params.Plan_Terraform){
                     echo '================ Terraform Plan ================'
 
-                         dir('AWSInfra') {
+                         dir('AppInfra') {
                              bat 'terraform plan'
                          }
 
@@ -57,7 +57,7 @@ pipeline {
                   if (params.Apply_Terraform){
                     echo '================ Terraform Apply ================'
 
-                         dir('AWSInfra') {
+                         dir('AppInfra') {
                              bat 'terraform apply -auto-approve'
                          }
  
@@ -75,7 +75,7 @@ pipeline {
                   if (params.Destroy_Terraform){
                     echo '================ Terraform Destroy ================'
 
-                         dir('AWSInfra') {
+                         dir('AppInfra') {
                              bat 'terraform destroy -auto-approve'
                          }
 
