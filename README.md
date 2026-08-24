@@ -4,7 +4,7 @@ A hands-on AWS project demonstrating practical experience with **Terraform, AWS 
 
 ## Architecture
 
-![AWS Infrastructure Architecture](architecture-diagram.png)
+<img width="1110" height="714" alt="image" src="https://github.com/user-attachments/assets/145fb53b-1b5a-4f52-b8b8-586beb0f1eb2" />
 
 The infrastructure is deployed in **AWS eu-west-1 (Ireland)** using a VPC with CIDR `11.0.0.0/16`. The VPC contains a public subnet `11.0.1.0/24` hosting a Node.js application on port `3000`, and a private subnet `11.0.3.0/24` hosting an RDS MySQL database on port `3306`.
 
@@ -64,4 +64,4 @@ Route53_record
 
 This project demonstrates practical experience in **AWS infrastructure design, Infrastructure as Code, networking, security, CI/CD automation, DNS, load balancing, and cloud deployment**.
 
-<img width="1110" height="714" alt="image" src="https://github.com/user-attachments/assets/145fb53b-1b5a-4f52-b8b8-586beb0f1eb2" />
+
