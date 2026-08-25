@@ -13,7 +13,7 @@ pipeline {
                 echo '================ Clone Repo ================'
 
                 dir('AppInfra') {
-                    sh 'dir'
+                    bat 'dir'
                 }
 
                 echo '================================================='
@@ -26,8 +26,8 @@ pipeline {
                 echo '================ Terraform Init ================'
 
                 dir('AppInfra') {
-                    sh 'dir'
-                    sh 'terraform init'
+                    bat 'dir'
+                    bat 'terraform init'
                 }
 
                 echo '================================================='
@@ -40,7 +40,7 @@ pipeline {
                     echo '================ Terraform Plan ================'
 
                          dir('AppInfra') {
-                             sh 'terraform plan'
+                             bat 'terraform plan'
                          }
 
                          echo '================================================='
@@ -58,7 +58,7 @@ pipeline {
                     echo '================ Terraform Apply ================'
 
                          dir('AppInfra') {
-                             sh 'terraform apply -auto-approve'
+                             bat 'terraform apply -auto-approve'
                          }
  
                          echo '================================================='
@@ -76,7 +76,7 @@ pipeline {
                     echo '================ Terraform Destroy ================'
 
                          dir('AppInfra') {
-                             sh 'terraform destroy -auto-approve'
+                             bat 'terraform destroy -auto-approve'
                          }
 
                          echo '================================================='
