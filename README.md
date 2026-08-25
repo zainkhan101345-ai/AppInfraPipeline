@@ -64,4 +64,5 @@ Route53_record
 
 This project demonstrates practical experience in **AWS infrastructure design, Infrastructure as Code, networking, security, CI/CD automation, DNS, load balancing, and cloud deployment**.
 
-
+The website is hosted on an EC2 instance and can be accessed through the configured domain.
+![alt text](image.png)
